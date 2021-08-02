@@ -1,6 +1,6 @@
 {
-  "name": "fluid-codemods",
-  "version": "0.1.0",
+  "name": "@tylerbu/fluid-codemods",
+  "version": "0.0.2",
   "scripts": {
     "lint": "eslint --cache .",
     "fcm": "ts-node ./src/cli.ts",
@@ -8,7 +8,8 @@
     "test:coverage": "codemod-cli test --coverage",
     "update-docs": "codemod-cli update-docs",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
-    "tsc": "tsc"
+    "tsc": "tsc -b",
+    "build": "npm run tsc"
   },
   "main": "dist/cli.js",
   "bin": {
@@ -26,8 +27,8 @@
     "@types/glob": "^7.1.4",
     "@types/jscodeshift": "^0.11.2",
     "@types/yargs": "^17.0.2",
-    "coveralls": "^3.1.0",
-    "jest": "^26.6.3",
+    "coveralls": "^3.1.1",
+    "jest": "^27.0.6",
     "prettier": "^2.3.2",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"

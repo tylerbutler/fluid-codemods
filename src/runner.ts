@@ -15,13 +15,13 @@ const flatten = (to: TransformerOptions): string[] => {
   return flattened;
 };
 
-export async function runTsTransform(
+export const runTsTransform = (
   transformPath: string,
   paths: string,
   transformerOptions: TransformerOptions,
   extensions = ['ts'],
   parser = 'ts'
-) {
+) => {
   try {
     let foundPaths = glob.sync(paths);
 
@@ -39,12 +39,6 @@ export async function runTsTransform(
       ...flatten(transformerOptions),
       ...foundPaths,
     ];
-
-    console.log(binOptions);
-
-    const f = flatten(transformerOptions);
-
-    console.log(f);
 
     return execa(binPath, binOptions, {
       stdio: 'inherit',
