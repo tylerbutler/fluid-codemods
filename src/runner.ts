@@ -36,6 +36,8 @@ export const runTsTransform = (
       extensions.join(','),
       '--parser',
       parser,
+      '--ignore-pattern',
+      '**/*.d.ts',
       ...flatten(transformerOptions),
       ...foundPaths,
     ];
