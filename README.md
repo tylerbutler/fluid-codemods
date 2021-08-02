@@ -1,43 +1,23 @@
 # fluid-codemods
 
-
-A collection of codemods for fluid-codemods.
+A collection of scripts to update Fluid Framework-based projects in an automated way using the JS AST.
 
 ## Usage
 
-To run a specific codemod from this project, you would run the following:
+To run a codemod from this package, run the following:
 
-```
-npx fluid-codemods <TRANSFORM NAME> path/of/files/ or/some**/*glob.js
+```bash
+npm i -g @tylerbu/fluid-codemods
 
-# or
-
-yarn global add fluid-codemods
-fluid-codemods <TRANSFORM NAME> path/of/files/ or/some**/*glob.js
+fcm -t TRANSFORM_NAME -p some/**/*glob.ts
 ```
 
-## Local Usage
+## `update-imports`
+
+This codemod changes the imports of Fluid Framework packages to or from the umbrella
+`@fluid-experimental/fluid-framework` package (aka the "uber-package"). This allows you to use the umbrella package for
+simplicity during development but switch to individual packages as needed in the future.
+
+```bash
+fcm -t update-imports -p some/**/*glob.ts
 ```
-node ./bin/cli.js <TRANSFORM NAME> path/of/files/ or/some**/*glob.js
-```
-
-## Transforms
-
-<!--TRANSFORMS_START-->
-<!--TRANSFORMS_END-->
-
-## Contributing
-
-### Installation
-
-* clone the repo
-* change into the repo directory
-* `yarn`
-
-### Running tests
-
-* `yarn test`
-
-### Update Documentation
-
-* `yarn update-docs`
