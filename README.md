@@ -21,3 +21,17 @@ simplicity during development but switch to individual packages as needed in the
 ```bash
 fcm -t update-imports -p some/**/*glob.ts
 ```
+
+### Examples
+
+To update the Badge example in the FluidFramework repo to use the uber-package, run this in the root of the repo:
+
+```bash
+fcm -t update-imports -p "./examples/**/badge/src/**/*.ts" --uber
+```
+
+To update the FluidHelloWorld repo to use individual packages, run this in the root of the repo:
+
+```bash
+fcm -t update-imports -p "./src/**/*.ts"
+```

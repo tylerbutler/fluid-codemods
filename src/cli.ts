@@ -29,5 +29,5 @@ const argv = yargs(hideBin(process.argv))
 
 console.log(chalk.green(chalk.bold(`Running '${argv.transform}' on ${argv.paths} ✌`)));
 const { _, transform, paths, $0, t, p, ...rest } = argv;
-const transformPath = presolve(`src/transforms/${argv.transform}/index.ts`);
+const transformPath = presolve(__dirname, `../src/transforms/${argv.transform}/index.ts`);
 runTsTransform(transformPath, argv.paths, rest);
